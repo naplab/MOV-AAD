@@ -136,7 +136,7 @@ The dataset is distributed through a **Google Drive download link provided in th
 
 ### 📦 Download the Dataset
 
-1. Open the [Google Drive Dataset Link](https://creativecommons.org/licenses/by/4.0/](https://drive.google.com/open?id=19D0o1WT7R7lDVCC-l7-WhYWsGXVYqpaS&usp=drive_fs) .
+1. Open the [Google Drive Dataset Link](https://drive.google.com/open?id=19D0o1WT7R7lDVCC-l7-WhYWsGXVYqpaS&usp=drive_fs) .
 2. Download the complete dataset, or select only the task folders needed for your analysis.
 3. Keep the task-level directory structure unchanged so that recordings can be matched directly to their corresponding stimuli and trajectories.
 
