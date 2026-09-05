@@ -60,26 +60,56 @@ All signals were synchronously recorded and streamed through **g.tec HIamp** and
 
 ## 📂 Dataset Directory Structure
 
-The repository/downloaded package follows the layout below:
+The released dataset is organized **by experimental task**. The four task folders are arranged in parallel, with task-specific recordings and stimuli stored together. For the conversation tasks, each subject recording file contains all trials from that task for the participant, including the synchronized neural, physiological, and behavioral modalities.
 
 ```directory
 MOV-AAD/
-├── participants/
-│   ├── sub-001/
-│   │   ├── eeg/          # Continuous or epoched 64-ch .mat/.fif data
-│   │   ├── physio/       # Interpolated and aligned physiological modalities
-│   │   ├── behavioral/   # Event markers, buzzer clicks, and localization report mice clicks
-│   │   └── stimuli/      # Aligned audio chunks presented during the trial
-│   ├── sub-002/
-│   └── ...
-│   └── sub-050/
-├── stimuli/              # Master audio repository for conversational blocks
-├── preprocessing_scripts/ # Spherical interpolation, temporal cross-correlation scripts
+├── SC/                              # Single-Conversation Task
+│   ├── recordings/                  # One subject file per participant; all SC trials and synchronized modalities
+│   │   ├── sub-001.*
+│   │   ├── sub-002.*
+│   │   └── ...
+│   └── stimulus/
+│       ├── audio/                   # Trial-level audio presented during SC
+│       └── trajectory/              # Trial-level source-motion trajectories
+│
+├── MC/                              # Multi-Conversation Task
+│   ├── recordings/                  # One subject file per participant; all MC trials and synchronized modalities
+│   │   ├── sub-001.*
+│   │   ├── sub-002.*
+│   │   └── ...
+│   └── stimulus/
+│       ├── audio/                   # Trial-level target/distractor audio used during MC
+│       └── trajectory/              # Trial-level source-motion trajectories
+│
+├── localization/                    # Localization Task
+│   ├── recordings/                  # Subject-level behavioral response recordings
+│   │   ├── sub-001.*                # Localization choice responses
+│   │   ├── sub-002.*
+│   │   └── ...
+│   └── stimulus/                    # Stimuli used in the localization task
+│
+├── repeated_sentence/               # Repeated Sentence Task
+│   ├── recordings/                  # Subject-level recordings for the repeated-sentence task
+│   │   ├── sub-001.*
+│   │   ├── sub-002.*
+│   │   └── ...
+│   └── stimulus/                    # Repeated-sentence stimuli
+│
+├── preprocessing_scripts/           # Preprocessing and alignment scripts
 ├── README.md
 └── dataset_info.json
+```
+
+### Organization Notes
+
+* **Task-first organization:** Data are grouped by experimental task rather than by participant.
+* **SC and MC recordings:** Each subject file contains that participant's complete set of trials for the corresponding conversation task, with all available synchronized modalities stored together.
+* **Conversation stimuli:** Audio and source trajectories are stored under each conversation task's `stimulus/` directory so that each trial can be paired with the exact presented stimulus and motion path.
+* **Localization task:** The released subject recordings contain the behavioral localization responses, corresponding to the participant's multiple-choice spatial reports, together with the task stimuli.
+* **Repeated Sentence task:** Subject recordings and the corresponding repeated-sentence stimuli are stored within the same task-level structure.
 
 ---
-```
 
 ## 🛠️ Preprocessing & Data Alignment Notes
 
@@ -102,42 +132,38 @@ To ensure high data reproducibility, the released dataset provides clean, aligne
 
 ## 💻 Download & Usage (Get Dataset)
 
-### 📦 Option 1: Via Zenodo (Web Interface)
-The complete multimodal dataset repository is hosted on Zenodo. You can download the full frozen archive upon paper publication:
-* 🔗 **Dataset Link:** [Will be updated upon publication]
-* 🔖 **DOI:** `10.5281/zenodo.XXXXXXX`
+The dataset is distributed through a **Google Drive download link provided in this GitHub repository**. The GitHub repository contains the documentation, dataset metadata, and preprocessing code, while the full data archive is hosted externally on Google Drive because of its size.
 
-### 💾 Option 2: Command Line Interface (CLI)
-To download and extract the dataset automatically inside your server environment, execute the following script:
+### 📦 Download the Dataset
+
+1. Open the [Google Drive Dataset Link](https://creativecommons.org/licenses/by/4.0/](https://drive.google.com/open?id=19D0o1WT7R7lDVCC-l7-WhYWsGXVYqpaS&usp=drive_fs) .
+2. Download the complete dataset, or select only the task folders needed for your analysis.
+3. Keep the task-level directory structure unchanged so that recordings can be matched directly to their corresponding stimuli and trajectories.
+
+### 💾 Repository Usage
+
+Clone this repository to obtain the README, dataset metadata, and preprocessing scripts:
 
 ```bash
-# Clone the repository structure
-git clone [https://github.com/mov-aad/mov-aad.github.io.git](https://github.com/mov-aad/mov-aad.github.io.git)
+git clone https://github.com/mov-aad/mov-aad.github.io.git
 cd mov-aad.github.io
-
-# Download the complete dataset zip archive (Placeholder URL)
-wget -O MOV-AAD-dataset.zip "[https://zenodo.org/record/XXXXXXX/files/MOV-AAD-dataset.zip?download=1](https://zenodo.org/record/XXXXXXX/files/MOV-AAD-dataset.zip?download=1)"
-
-# Verify MD5 checksum (recommended)
-md5sum -c checksums.txt
-
-# Extract dataset into the root directory
-unzip MOV-AAD-dataset.zip -d ./data/
-
 ```
+
+After downloading the dataset from the linked Google Drive, place or mount the dataset at a location accessible to your analysis environment. The preprocessing scripts can then be applied to the task-specific recordings using the released directory structure described above.
+
+---
 
 ## 📜 Citation
 
-If you use the **MOV-AAD** dataset, prealigned physiological matrices, behavioral tracking metrics, or baseline code in your academic work, please cite our paper using the following BibTeX entry:
+If you use the **MOV-AAD** dataset, synchronized multimodal recordings, behavioral measurements, stimuli, trajectories, or released preprocessing code in your academic work, please cite the associated **Interspeech 2026** paper.
 
 ```bibtex
-@article{mov_aad_2026,
-  title={MOV-AAD: A Large-Scale Multimodal Dataset for Auditory Attention During Moving Conversations},
-  author={LastName, FirstName and Collaborator, and JointAuthor, Author},
-  journal={arXiv preprint arXiv:2026.XXXXX},
-  year={2026},
-  eprint={2026.XXXXX},
-  archivePrefix={arXiv},
-  primaryClass={eess.AS}
+@inproceedings{mov_aad_2026,
+  title     = {MOV-AAD: A Large-Scale Multimodal Dataset for Auditory Attention During Moving Conversations},
+  author    = {Author list to be updated},
+  booktitle = {Proceedings of Interspeech 2026},
+  year      = {2026}
 }
+```
 
+The final author list, page numbers, DOI, and official proceedings metadata can be updated here once the Interspeech 2026 bibliographic record is available.
