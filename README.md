@@ -4,52 +4,43 @@
 <br>
 
 [![WEB-Page](https://img.shields.io/badge/Project-Page-blue.svg)](https://mov-aad.github.io)
-[![Google Drive](https://img.shields.io/badge/🏫_Google_Drive-Access_Upon_Request-orange.svg)](https://drive.google.com/open?id=19D0o1WT7R7lDVCC-l7-WhYWsGXVYqpaS&usp=drive_fs)
-[![Hugging Face](https://img.shields.io/badge/🤗_HuggingFace-Uploading_/_In_Prep-yellow.svg)](https://huggingface.co/datasets/naplabdataset/mov-aad)
+[![Google Drive](https://img.shields.io/badge/Google_Drive-Access_Upon_Request-e65c00.svg)](https://drive.google.com/open?id=19D0o1WT7R7lDVCC-l7-WhYWsGXVYqpaS&usp=drive_fs)
+[![Hugging Face](https://img.shields.io/badge/🤗_HuggingFace-Uploading_/_In_Prep-FF8577.svg)](https://huggingface.co/datasets/naplabdataset/mov-aad)
+[![License](https://img.shields.io/badge/License-CC--BY--4.0-green.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 Official repository for **MOV-AAD**, a large-scale multimodal dataset designed for investigating selective auditory attention decoding (AAD), spatial audio localization, and cross-modal peripheral physiological tracking during dynamic, naturalistic conversations with moving sound sources.
 
 
 ---
 
-## 🎬 Introduction Video & Citation
+## 🎬 10-Minute Walkthrough Video
 
-<table style="width: 100%; table-layout: fixed;">
-<tr>
-<td width="40%" valign="top" style="padding-right: 20px;">
-
-### 📹 10-Mins Walkthrough Video
-<a href="https://www.youtube.com/watch?v=PbIi4rVktc0" target="_blank" title="Watch MOV-AAD Walkthrough on YouTube">
-  <img src="https://img.youtube.com/vi/PbIi4rVktc0/hqdefault.jpg" alt="MOV-AAD Video Walkthrough" style="width: 100%; min-width: 380px; border-radius: 8px; border: 1px solid #e1e4e8; display: block;">
-</a>
-
-<p align="center" style="margin-top: 10px; margin-bottom: 0;">
-  <a href="https://www.youtube.com/watch?v=PbIi4rVktc0" target="_blank">
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=PbIi4rVktc0" target="_blank" title="Watch MOV-AAD Walkthrough on YouTube">
+    <img src="https://img.youtube.com/vi/PbIi4rVktc0/maxresdefault.jpg" alt="MOV-AAD Video Walkthrough" style="width: 50%; max-width: 520px; border-radius: 8px; border: 1px solid #e1e4e8; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: block;">
   </a>
-</p>
+  <p style="margin-top: 8px; font-size: 0.9rem;">
+    ▶️ <a href="https://www.youtube.com/watch?v=PbIi4rVktc0" target="_blank"><b>Click to Watch Full 10-Min Walkthrough on YouTube</b></a>
+    <br>
+    <small style="color: #666;">(Covers experimental paradigm, multimodal sensor alignment, and baseline demonstrations)</small>
+  </p>
+</div>
 
-</td>
-<td width="60%" valign="top">
+---
 
-### 📜 Citation
-If you use MOV-AAD, please cite our **Interspeech 2026** paper:
+## 📜 Citation
+
+If you use MOV-AAD in your research, please cite our **Interspeech 2026** paper:
 
 ```bibtex
 @inproceedings{mov_aad_2026,
-  title     = {MOV-AAD: A Large-Scale Multimodal Dataset for
-               Auditory Attention Decoding During Moving
-               Conversations},
-  author    = {He, Xiaomin and Choudhari, Vishal and Spratt,
-               Tristan J. and Raghavan, Aarya and Lee, Richard T.
-               and Mesgarani, Nima},
+  title     = {MOV-AAD: A Large-Scale Multimodal Dataset for Auditory Attention Decoding During Moving Conversations},
+  author    = {He, Xiaomin and Choudhari, Vishal and Spratt, Tristan J. and Raghavan, Aarya and Lee, Richard T. and Mesgarani, Nima},
   booktitle = {Interspeech 2026},
   year      = {2026}
 }
 ```
 
-</td>
-</tr>
-</table>
 
 ---
 
