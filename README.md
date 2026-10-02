@@ -1,18 +1,63 @@
 # MOV-AAD: Multimodal Auditory Attention Dataset
 
+[![Award](https://img.shields.io/badge/🏆_Award-Best_Student_Paper_@_INTERSPEECH_2026-ffd700.svg?style=for-the-badge)](https://interspeech2026.org)
+<br>
+
 [![WEB-Page](https://img.shields.io/badge/Project-Page-blue.svg)](https://mov-aad.github.io)
-[![License](https://img.shields.io/badge/License-CC--BY--4.0-green.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Data-Sampling](https://img.shields.io/badge/Sampling--Rate-1200_Hz-orange.svg)]()
+[![Google Drive](https://img.shields.io/badge/🏫_Google_Drive-Access_Upon_Request-orange.svg)](https://drive.google.com/open?id=19D0o1WT7R7lDVCC-l7-WhYWsGXVYqpaS&usp=drive_fs)
+[![Hugging Face](https://img.shields.io/badge/🤗_HuggingFace-Uploading_/_In_Prep-yellow.svg)](https://huggingface.co/datasets/naplabdataset/mov-aad)
 
 Official repository for **MOV-AAD**, a large-scale multimodal dataset designed for investigating selective auditory attention decoding (AAD), spatial audio localization, and cross-modal peripheral physiological tracking during dynamic, naturalistic conversations with moving sound sources.
+
+
+---
+
+## 🎬 Introduction Video & Citation
+
+<table style="width: 100%; table-layout: fixed;">
+<tr>
+<td width="40%" valign="top" style="padding-right: 20px;">
+
+### 📹 10-Mins Walkthrough Video
+<a href="https://www.youtube.com/watch?v=PbIi4rVktc0" target="_blank" title="Watch MOV-AAD Walkthrough on YouTube">
+  <img src="https://img.youtube.com/vi/PbIi4rVktc0/hqdefault.jpg" alt="MOV-AAD Video Walkthrough" style="width: 100%; min-width: 380px; border-radius: 8px; border: 1px solid #e1e4e8; display: block;">
+</a>
+
+<p align="center" style="margin-top: 10px; margin-bottom: 0;">
+  <a href="https://www.youtube.com/watch?v=PbIi4rVktc0" target="_blank">
+  </a>
+</p>
+
+</td>
+<td width="60%" valign="top">
+
+### 📜 Citation
+If you use MOV-AAD, please cite our **Interspeech 2026** paper:
+
+```bibtex
+@inproceedings{mov_aad_2026,
+  title     = {MOV-AAD: A Large-Scale Multimodal Dataset for
+               Auditory Attention Decoding During Moving
+               Conversations},
+  author    = {He, Xiaomin and Choudhari, Vishal and Spratt,
+               Tristan J. and Raghavan, Aarya and Lee, Richard T.
+               and Mesgarani, Nima},
+  booktitle = {Interspeech 2026},
+  year      = {2026}
+}
+```
+
+</td>
+</tr>
+</table>
 
 ---
 
 ## 📊 Dataset At A Glance
 
-| **9** Synchronized Modalities | **1200 Hz** Unified Sampling Rate | **50** Healthy Subjects |
+| **10** Synchronized Modalities | **1200 Hz** Unified Sampling Rate | **50** Healthy Subjects |
 | :--- | :--- | :--- |
-| 64-ch EEG, Gaze, Pupil, Respiration, GSR, PPG, SpO₂, Temp, Motion | Fully aligned across all neural & physiological data streams | Age 24 ± 4.5 years, verified normal hearing status |
+| 64-ch EEG, Gaze, Pupil, Respiration Airflow, Respiration Effort, GSR, PPG, SpO₂, Temperature, Motion | Fully aligned across all neural & physiological data streams | Age 24 ± 4.5 years, verified normal hearing status |
 
 | **~75 Min** Total Duration | **4** Distinct Tasks | **Rich** Behavioral Tracking |
 | :--- | :--- | :--- |
@@ -45,16 +90,16 @@ The dataset encompasses four sequential experimental tasks per participant, tran
 All signals were synchronously recorded and streamed through **g.tec HIamp** and a **Simulink GUI** at **1200 Hz**, with a hardware 60 Hz notch filter applied during acquisition.
 
 * **EEG:** 64 channels, 1200 Hz high-density neural recordings via `g.tec g.HIamp`.
-* **Pupil Dilation:** Binocular measurements captured at 60 Hz via `Tobii Pro Nano` and upsampled with aligned temporal interpolation to **1200 Hz**.
-* **Gaze Location:** Screen-coordinate gaze tracking (X and Y axes) mapped to screen size, recorded at 60 Hz and unified to **1200 Hz**.
-* **Respiration Flow:** Nasal airflow monitoring sampled at 1200 Hz.
-* **Respiration Effort:** Thoracic expansion belt tracking sampled at 1200 Hz.
-* **GSR:** Galvanic skin response sampled at 1200 Hz.
-* **PPG:** Raw optical photoplethysmography waveform sampled at 1200 Hz.
-* **Heart Rate:** Derived beat-by-beat heart rate extracted from raw PPG streams (1200 Hz).
-* **SpO₂:** Peripheral oxygen saturation monitoring sampled at 1200 Hz.
-* **Temperature:** Skin temperature monitoring sampled at 1200 Hz.
-* **Accelerometer:** Triaxial head motion tracking sampled at 1200 Hz.
+* **Pupil Dilation:** Binocular measurements captured at 60 Hz via `Tobii Pro Nano` and upsampled with aligned temporal interpolation to 1200 Hz.
+* **Gaze Location:** Screen-coordinate gaze tracking (X and Y axes) mapped to screen size (display dimensions: $52 \times 32\text{ cm}$, viewing distance: roughly 60 cm to account for natural posture variation), recorded at 60 Hz and unified to 1200 Hz.
+* **Respiration Flow:** Nasal airflow monitoring.
+* **Respiration Effort:** Thoracic expansion belt (chest) tracking.
+* **GSR:** Galvanic skin response.
+* **PPG:** Raw optical photoplethysmography waveform.
+* **Heart Rate:** Derived beat-by-beat heart rate extracted from raw PPG streams.
+* **SpO₂:** Peripheral oxygen saturation monitoring.
+* **Temperature:** Skin temperature monitoring, recorded from the dorsal surface of the non-dominant hand.
+* **Accelerometer:** Triaxial motion tracking sampled at 1200 Hz, mounted on the chair back to capture gross body and seat vibrations.
 
 ---
 
@@ -85,14 +130,12 @@ MOV-AAD/
 ├── localization/                    # Localization Task
 │   ├── recordings/                  # Subject-level behavioral response recordings
 │   │   ├── sub-001.*                # Localization choice responses
-│   │   ├── sub-002.*
 │   │   └── ...
 │   └── stimulus/                    # Stimuli used in the localization task
 │
 ├── repeated_sentence/               # Repeated Sentence Task
 │   ├── recordings/                  # Subject-level recordings for the repeated-sentence task
 │   │   ├── sub-001.*
-│   │   ├── sub-002.*
 │   │   └── ...
 │   └── stimulus/                    # Repeated-sentence stimuli
 │
@@ -130,40 +173,17 @@ To ensure high data reproducibility, the released dataset provides clean, aligne
 
 ---
 
-## 💻 Download & Usage (Get Dataset)
+## 💻 Download & Access
 
-The dataset is distributed through a **Google Drive download link provided in this GitHub repository**. The GitHub repository contains the documentation, dataset metadata, and preprocessing code, while the full data archive is hosted externally on Google Drive because of its size.
+Because of the massive scale of the multi-channel recordings, the full dataset archive is hosted externally across dedicated data repositories.
 
-### 📦 Download the Dataset
+### 📦 Access Channels
 
-1. Open the [Google Drive Dataset Link](https://drive.google.com/open?id=19D0o1WT7R7lDVCC-l7-WhYWsGXVYqpaS&usp=drive_fs) .
-2. Download the complete dataset, or select only the task folders needed for your analysis.
-3. Keep the task-level directory structure unchanged so that recordings can be matched directly to their corresponding stimuli and trajectories.
+* **Google Drive (Primary Archive — Controlled Access)**  
+  * **Link:** [Google Drive Master Archive](https://drive.google.com/open?id=19D0o1WT7R7lDVCC-l7-WhYWsGXVYqpaS&usp=drive_fs)
+  * **Access Note:** Click **Request Access** on Google Drive. Access requests are approved manually in accordance with our institutional governance protocol. You can download the complete archive or select specific task folders (`SC/`, `MC/`, `localization/`, `repeated_sentence/`) as needed.
 
-### 💾 Repository Usage
+* **Hugging Face Hub (In Preparation)**  
+  * **Link:** [`naplabdataset/mov-aad`](https://huggingface.co/datasets/naplabdataset/mov-aad)
+  * **Access Note:** Dataset upload is currently in progress. Direct CLI and programmatic loading via Hugging Face will be supported upon completion.
 
-Clone this repository to obtain the README, dataset metadata, and preprocessing scripts:
-
-```bash
-git clone https://github.com/mov-aad/mov-aad.github.io.git
-cd mov-aad.github.io
-```
-
-After downloading the dataset from the linked Google Drive, place or mount the dataset at a location accessible to your analysis environment. The preprocessing scripts can then be applied to the task-specific recordings using the released directory structure described above.
-
----
-
-## 📜 Citation
-
-If you use the **MOV-AAD** dataset, synchronized multimodal recordings, behavioral measurements, stimuli, trajectories, or released preprocessing code in your academic work, please cite the associated **Interspeech 2026** paper.
-
-```bibtex
-@inproceedings{mov_aad_2026,
-  title     = {MOV-AAD: A Large-Scale Multimodal Dataset for Auditory Attention During Moving Conversations},
-  author    = {Author list to be updated},
-  booktitle = {Proceedings of Interspeech 2026},
-  year      = {2026}
-}
-```
-
-The final author list, page numbers, DOI, and official proceedings metadata can be updated here once the Interspeech 2026 bibliographic record is available.
