@@ -3,10 +3,12 @@
 [![Award](https://img.shields.io/badge/🏆_Award-Best_Student_Paper_@_INTERSPEECH_2026-ffd700.svg?style=for-the-badge)](https://interspeech2026.org)
 <br>
 
-[![WEB-Page](https://img.shields.io/badge/Project-Page-blue.svg)](https://mov-aad.github.io)
+[![Paper](https://img.shields.io/badge/Paper-INTERSPEECH_2026-2563EB.svg)](https://www.isca-archive.org/interspeech_2026/he26g_interspeech.html)
 [![Google Drive](https://img.shields.io/badge/Google_Drive-Access_Upon_Request-e65c00.svg)](https://drive.google.com/open?id=19D0o1WT7R7lDVCC-l7-WhYWsGXVYqpaS&usp=drive_fs)
-[![Hugging Face](https://img.shields.io/badge/🤗_HuggingFace-Uploading_/_In_Prep-FF8577.svg)](https://huggingface.co/datasets/naplabdataset/mov-aad)
+[![Hugging Face](https://img.shields.io/badge/🤗_HuggingFace-Public_Dataset-FFD21E.svg)](https://huggingface.co/datasets/naplabdataset/mov-aad)
 [![License](https://img.shields.io/badge/License-CC--BY--4.0-green.svg)](https://creativecommons.org/licenses/by/4.0/)
+
+
 
 Official repository for **MOV-AAD**, a large-scale multimodal dataset designed for investigating selective auditory attention decoding (AAD), spatial audio localization, and cross-modal peripheral physiological tracking during dynamic, naturalistic conversations with moving sound sources.
 
@@ -28,14 +30,17 @@ Official repository for **MOV-AAD**, a large-scale multimodal dataset designed f
 
 ## 📜 Citation
 
-If you use MOV-AAD in your research, please cite our **Interspeech 2026** paper:
+If you use MOV-AAD in your research, please cite our [**Interspeech 2026 paper**](https://www.isca-archive.org/interspeech_2026/he26g_interspeech.html):
 
 ```bibtex
-@inproceedings{mov_aad_2026,
-  title     = {MOV-AAD: A Large-Scale Multimodal Dataset for Auditory Attention Decoding During Moving Conversations},
-  author    = {He, Xiaomin and Choudhari, Vishal and Spratt, Tristan J. and Raghavan, Aarya and Lee, Richard T. and Mesgarani, Nima},
-  booktitle = {Interspeech 2026},
-  year      = {2026}
+@inproceedings{he26g_interspeech,
+  title     = {{MOV-AAD: A Large-Scale Multimodal Dataset for Auditory Attention Decoding During Moving Conversations}},
+  author    = {Xiaomin He and Vishal Choudhari and Tristan J. Spratt and Aarya Raghavan and Richard T. Lee and Nima Mesgarani},
+  year      = {2026},
+  booktitle = {{Interspeech 2026 [Long Track]}},
+  pages     = {3237--3246},
+  doi       = {10.21437/Interspeech.2026-3556},
+  issn      = {2958-1796}
 }
 ```
 
