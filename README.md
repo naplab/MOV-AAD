@@ -11,7 +11,6 @@
 Official repository for **MOV-AAD**, a large-scale multimodal dataset designed for investigating selective auditory attention decoding (AAD), spatial audio localization, and cross-modal peripheral physiological tracking during dynamic, naturalistic conversations with moving sound sources.
 
 
----
 
 ## 🎬 10-Minute Walkthrough Video
 
@@ -26,7 +25,6 @@ Official repository for **MOV-AAD**, a large-scale multimodal dataset designed f
   </p>
 </div>
 
----
 
 ## 📜 Citation
 
@@ -42,7 +40,7 @@ If you use MOV-AAD in your research, please cite our **Interspeech 2026** paper:
 ```
 
 
----
+
 
 ## 📊 Dataset At A Glance
 
@@ -54,7 +52,7 @@ If you use MOV-AAD in your research, please cite our **Interspeech 2026** paper:
 | :--- | :--- | :--- |
 | Massive continuous recording per participant for AAD modeling | From structured validation to naturalistic conversations | Active repeated-word detection & precise localization reports |
 
----
+
 
 ## 🛠️ Experimental Paradigms & Data Composition
 
@@ -74,7 +72,7 @@ The dataset encompasses four sequential experimental tasks per participant, tran
 | **Single-Conversation Task** | Track neural tracking of speech with spatial change | Continuous dialogue context; Multi-turn talkers | HRTF-based dynamic moving (-90° to +90°); RMS-matched | Diotic pedestrian/babble noise (-9, -12 dB) | 40 trials<br>`(~30 min)` | ✓ EEG & Physio<br>✓ Behavior & Audio |
 | **Multi-Conversation Task** | Evaluate selective Auditory Attention Decoding (AAD) | Two parallel stories; Continuous context & turn-taking | Two independent HRTF sources moving dynamically within ±90° | Diotic pedestrian/babble noise (-9, -12 dB) | 56 trials<br>`(~45 min)` | ✓ EEG & Physio<br>✓ Behavior & Audio |
 
----
+
 
 ## 🔬 Recording Modalities Specification
 
@@ -92,7 +90,7 @@ All signals were synchronously recorded and streamed through **g.tec HIamp** and
 * **Temperature:** Skin temperature monitoring, recorded from the dorsal surface of the non-dominant hand.
 * **Accelerometer:** Triaxial motion tracking sampled at 1200 Hz, mounted on the chair back to capture gross body and seat vibrations.
 
----
+
 
 ## 📂 Dataset Directory Structure
 
@@ -143,7 +141,7 @@ MOV-AAD/
 * **Localization task:** The released subject recordings contain the behavioral localization responses, corresponding to the participant's multiple-choice spatial reports, together with the task stimuli.
 * **Repeated Sentence task:** Subject recordings and the corresponding repeated-sentence stimuli are stored within the same task-level structure.
 
----
+
 
 ## 🛠️ Preprocessing & Data Alignment Notes
 
@@ -162,7 +160,7 @@ To ensure high data reproducibility, the released dataset provides clean, aligne
     * Primary sync was established via hardware trigger pulses routed simultaneously into the `g.tec` digital input channel.
     * Fine-grained temporal jitter was eliminated post-hoc via **cross-correlation analysis** between the recorded acoustic playback loop and the original master stimulus waveforms, ensuring sub-millisecond precision.
 
----
+
 
 ## 💻 Download & Access
 
