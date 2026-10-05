@@ -14,18 +14,32 @@ Official repository for **MOV-AAD**, a large-scale multimodal dataset designed f
 
 
 
-## 🎬 10-Minute Walkthrough Video
+## 🎬 10-Minute Walkthrough & Overview
 
-<div align="center">
-  <a href="https://www.youtube.com/watch?v=PbIi4rVktc0" target="_blank" title="Watch MOV-AAD Walkthrough on YouTube">
-    <img src="https://img.youtube.com/vi/PbIi4rVktc0/maxresdefault.jpg" alt="MOV-AAD Video Walkthrough" style="width: 50%; max-width: 520px; border-radius: 8px; border: 1px solid #e1e4e8; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: block;">
-  </a>
-  <p style="margin-top: 8px; font-size: 0.9rem;">
-    ▶️ <a href="https://www.youtube.com/watch?v=PbIi4rVktc0" target="_blank"><b>Click to Watch Full 10-Min Walkthrough on YouTube</b></a>
-    <br>
-    <small style="color: #666;">(Covers experimental paradigm, multimodal sensor alignment, and baseline demonstrations)</small>
-  </p>
-</div>
+<table style="width: 100%; border: none; border-collapse: collapse;">
+  <tr style="border: none;">
+    <td align="center" valign="top" style="width: 50%; border: none; padding: 10px;">
+      <a href="https://www.youtube.com/watch?v=PbIi4rVktc0" target="_blank" title="Watch MOV-AAD Walkthrough on YouTube">
+        <img src="https://img.youtube.com/vi/PbIi4rVktc0/maxresdefault.jpg" alt="MOV-AAD Video Walkthrough" style="height: 300px; width: 100%; object-fit: contain; border-radius: 8px; border: 1px solid #e1e4e8; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: block; margin: 0 auto;">
+      </a>
+      <p style="margin-top: 10px; font-size: 0.9rem;">
+        ▶️️ <a href="https://www.youtube.com/watch?v=PbIi4rVktc0" target="_blank"><b>Watch Full 10-Min Walkthrough on YouTube</b></a>
+        <br>
+        <small style="color: #666;">(Experimental paradigm, sensor alignment, & demos)</small>
+      </p>
+    </td>
+    <td align="center" valign="top" style="width: 50%; border: none; padding: 10px;">
+      <a href="images/Method_CameraReady.pdf" target="_blank" title="View Full High-Res Method Vector (PDF)">
+        <img src="images/Method_CameraReady.png" alt="MOV-AAD Experimental Method & Paradigm" style="height: 300px; width: 100%; object-fit: contain; border-radius: 8px; border: 1px solid #e1e4e8; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: block; margin: 0 auto;">
+      </a>
+      <p style="margin-top: 10px; font-size: 0.9rem;">
+        🔍 <a href="images/Method_CameraReady.pdf" target="_blank"><b>Experimental Paradigm & System Pipeline</b></a>
+        <br>
+        <small style="color: #666;">(Click image or link to open high-res vector PDF)</small>
+      </p>
+    </td>
+  </tr>
+</table>
 
 
 ## 📜 Citation
